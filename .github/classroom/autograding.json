@@ -1,7 +1,7 @@
 {
   "tests": [
     {
-      "name": "TestCase 01: Array List constructor",
+      "name": "TestCase 01: ArrayList constructor",
       "setup": "git submodule update --init --recursive && mkdir -p build && cd build && cmake .. && cmake --build .",
       "run": "cd build && ctest -VVV -R \"create empty array list\"",
       "input": "",
