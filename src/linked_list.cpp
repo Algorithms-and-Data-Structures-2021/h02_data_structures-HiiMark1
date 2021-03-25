@@ -61,20 +61,19 @@ namespace itis {
         internal::check_out_of_range(index, 0, size_);
         // Tip 1: рассмотрите случай, когда удаляется элемент в начале списка
         // Tip 2: используйте функцию find_node(index)
-        Node *node = nullptr;
+        Node *node = head_;
         Element e;
         if (index == 0) {
-            node = head_;
             head_ = head_ -> next;
             e = node -> data;
-        }
-        if(index!=0){
+            delete node;
+        } else {
             node = find_node(index);
             find_node(index - 1) -> next = node -> next;
             e = node -> data;
+            delete node;
         }
         size_ --;
-        delete[] node;
         return e;
     }
 
